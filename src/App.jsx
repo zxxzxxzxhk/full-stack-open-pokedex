@@ -32,6 +32,8 @@ const App = () => {
     next = pokemonList.find(({ id }) => id === pokemonId + 1)
   }
 
+
+
   return (
     <Routes>
       <Route exact path="/" element={<PokemonList pokemonList={pokemonList} />} />
