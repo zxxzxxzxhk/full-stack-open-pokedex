@@ -44,9 +44,7 @@ jobs:
           username: DN
           color: '#ff00aa'
           avatarUrl: https://github.githubassets.com/images/modules/logos_page/Octocat.png
-          description: NewDepolyment
-          details: Commited by ${{ toJson(github.event.commits.committer.name) }} 
-          text: Depoly is successed.
+          details: Depoly is successed.
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Test Failure
         uses: rjstone/discord-webhook-notify@v1
@@ -56,11 +54,8 @@ jobs:
           username: DN
           color: '#ff00aa'
           avatarUrl: https://github.githubassets.com/images/modules/logos_page/Octocat.png
-          description: New Depolyment
-          details: Commited by ${{ toJson(github.event.commits.committer.name) }} 
-          text: Depoly is not success.
+          details: Depoly failed.
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-          
       
   tag_release:
     needs: [simple_deployment_pipeline]
